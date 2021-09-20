@@ -1,0 +1,111 @@
+
+ .myTree {
+   -fx-font: 12px Tahoma;
+   -fx-stroke: #eeeeee;
+    -fx-background-color: #52ff64; 
+   -fx-background-radius: 10;
+   -fx-text-fill: #ffffff;
+   }
+
+.myTree .tree-cell {
+    -fx-background-color: #52ff64;
+    -fx-text-fill: #ffffff ;
+    -fx-padding: 0.3em 0em 0.3em 0em ;
+}
+
+.myTree .tree-cell:selected {
+    -fx-font-weight: bold;
+    -fx-background-color: #3ca447;
+    -fx-padding: 0.3em 0em 0.3em 0em ;
+    -fx-background-radius: 10;
+}
+
+.myTable  {
+    
+    -fx-background-color: transparent;
+}
+
+.myTable .table-column{
+  
+    -fx-alignment: CENTER;
+    -fx-border-color: #3ca447;
+    -fx-background-color: #52ff64;
+}
+
+
+.myTable .table-cell{
+     
+    -fx-background-color: #52ff64;
+    -fx-padding: 0.3em 0em 0.3em 0em ;
+    -fx-alignment : CENTER;
+    -fx-border-color: #3ca447;
+}
+.myTable .table-cell{
+     
+    -fx-background-color: #52ff64;
+    -fx-padding: 0.3em 0em 0.3em 0em ;
+    -fx-alignment : CENTER;
+    -fx-border-color: #3ca447;
+}
+
+.myTable .table-row-cell{
+    
+    -fx-background-color: #52ff64;
+}
+.myTable .table-row-cell:selected { 
+    
+    -fx-background-color: #52ff64;
+    -fx-text-fill: #ffffff;
+    -fx-padding: 0.3em 0em 0.3em 0em ;
+    -fx-alignment : CENTER;
+    
+   
+}
+.myTable > .virtual-flow > .scroll-bar:vertical,
+.myTable > .virtual-flow > .scroll-bar:vertical > .track,
+.myTable > .virtual-flow > .scroll-bar:vertical > .track-background, 
+.myTable > .virtual-flow > .scroll-bar:horizontal,
+.myTable > .virtual-flow > .scroll-bar:horizontal > .track,
+.myTable > .virtual-flow > .scroll-bar:horizontal > .track-background {
+   
+    -fx-background-color: transparent;
+}
+
+.myBC .chart-legend-item {
+    
+    -fx-background-color: #52ff64;
+}
+.myBC .chart-legend {
+   
+    -fx-background-color: #52ff64;
+    
+}
+
+.myBC .chart-legend-item-symbol {
+    
+    -fx-background-color: #3ca447;
+    -fx-background-radius: 5;
+   
+}
+
+.myBC  .default-color0.chart-bar {
+    -fx-background-color: #3ca447;
+}
+
+.myBC  .default-color1.chart-bar {
+    -fx-background-color: #ffee00
+}
+
+.combo-box .list-view .list-cell{
+    
+    -fx-background-color: #52ff64;
+}
+.combo-box .list-view .list-cell:filled:hover 
+{
+    -fx-background-color: yellow;
+    -fx-text-fill: -fx-text-inner-color;
+}
+
+.calendar-cell-selected{
+    -fx-background-color: yellow;
+}

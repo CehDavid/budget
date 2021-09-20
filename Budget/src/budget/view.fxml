@@ -1,0 +1,1406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="anchorPane" fx:id="anchorPane" prefHeight="570.0" prefWidth="630.0" style="-fx-background-color: #3ca447;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="budget.ViewController">
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+   <children>
+      <SplitPane dividerPositions="0.24749163879598662" layoutX="15.0" layoutY="42.0" prefHeight="486.0" prefWidth="600.0" style="-fx-background-color: #52ff64; -fx-background-radius: 10;">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <StackPane id="menuPane" fx:id="menuPane" layoutX="-12.0" layoutY="14.0" prefHeight="484.0" prefWidth="175.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Pane id="spendingPane" fx:id="spendingPane" prefHeight="484.0" prefWidth="417.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox layoutY="60.0" prefHeight="40.0" prefWidth="447.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Összeg:">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="15.0" top="10.0" />
+                                 </HBox.margin>
+                              </Text>
+                              <TextField id="spendingTF" fx:id="spendingTF" alignment="BOTTOM_RIGHT" prefWidth="110.0" style="-fx-background-color: #52ff64; -fx-border-color: black; -fx-border-width: 0 0 1 0;">
+                                 <HBox.margin>
+                                    <Insets left="15.0" right="5.0" top="10.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-1.0" />
+                                 </padding>
+                              </TextField>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ft">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="50.0" top="10.0" />
+                                 </HBox.margin>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dátum:">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="15.0" top="10.0" />
+                                 </HBox.margin>
+                              </Text>
+                              <DatePicker id="spendingDP" fx:id="spendingDP" blendMode="GREEN" prefHeight="25.0" prefWidth="101.0" style="-fx-background-color: green;">
+                                 <HBox.margin>
+                                    <Insets top="6.0" />
+                                 </HBox.margin>
+                              </DatePicker>
+                           </children>
+                        </HBox>
+                        <Text layoutX="15.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kategoriák">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <HBox layoutY="180.0" prefHeight="70.0" prefWidth="447.0">
+                           <children>
+                              <VBox prefHeight="80.0" prefWidth="70.0">
+                                 <children>
+                                    <Button id="houseButton" fx:id="houseButton" mnemonicParsing="false" onAction="#selectedHouseButton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-color: #3ca447; -fx-background-radius: 10;">
+                                       <effect>
+                                          <DropShadow blurType="GAUSSIAN" />
+                                       </effect>
+                                       <graphic>
+                                          <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Image/house.png" />
+                                             </image>
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="otthon">
+                                       <VBox.margin>
+                                          <Insets left="15.0" top="2.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="15.0" right="20.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox prefHeight="80.0" prefWidth="70.0">
+                                 <children>
+                                    <Button id="carButton" fx:id="carButton" mnemonicParsing="false" onAction="#selectedCarButton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-color: #3ca447; -fx-background-radius: 10;">
+                                       <effect>
+                                          <DropShadow blurType="GAUSSIAN" />
+                                       </effect>
+                                       <graphic>
+                                          <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Image/car.png" />
+                                             </image>
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="autó">
+                                       <VBox.margin>
+                                          <Insets left="15.0" top="2.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets right="20.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox prefHeight="80.0" prefWidth="70.0">
+                                 <children>
+                                    <Button id="shoppingCartButton" fx:id="shoppingCartButton" mnemonicParsing="false" onAction="#selectedShoppingCartButton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-color: #3ca447; -fx-background-radius: 10;">
+                                       <effect>
+                                          <DropShadow blurType="GAUSSIAN" />
+                                       </effect>
+                                       <graphic>
+                                          <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Image/shoppingCart.png" />
+                                             </image>
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="élelmiszer">
+                                       <VBox.margin>
+                                          <Insets left="5.0" top="2.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets right="20.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox prefHeight="80.0" prefWidth="70.0">
+                                 <children>
+                                    <Button id="shoppingBagButton" fx:id="shoppingBagButton" mnemonicParsing="false" onAction="#selectedShoppingBagButton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-color: #3ca447; -fx-background-radius: 10;">
+                                       <effect>
+                                          <DropShadow blurType="GAUSSIAN" />
+                                       </effect>
+                                       <graphic>
+                                          <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Image/shoppingBag.png" />
+                                             </image>
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="vásárlás">
+                                       <VBox.margin>
+                                          <Insets left="10.0" top="2.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets right="20.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox prefHeight="80.0" prefWidth="70.0">
+                                 <children>
+                                    <Button id="invoiceButton" fx:id="invoiceButton" mnemonicParsing="false" onAction="#selectedInvoiceButton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-color: #3ca447; -fx-background-radius: 10;">
+                                       <effect>
+                                          <DropShadow blurType="GAUSSIAN" />
+                                       </effect>
+                                       <graphic>
+                                          <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Image/invoices.png" />
+                                             </image>
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="számlák">
+                                       <VBox.margin>
+                                          <Insets left="10.0" top="2.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox layoutY="280.0" prefHeight="70.0" prefWidth="447.0">
+                           <children>
+                              <VBox prefHeight="80.0" prefWidth="70.0">
+                                 <children>
+                                    <Button id="studentButton" fx:id="studentButton" mnemonicParsing="false" onAction="#selectedStudentButton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-color: #3ca447; -fx-background-radius: 10;">
+                                       <effect>
+                                          <DropShadow blurType="GAUSSIAN" />
+                                       </effect>
+                                       <graphic>
+                                          <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Image/student.png" />
+                                             </image>
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="oktatás">
+                                       <VBox.margin>
+                                          <Insets left="11.0" top="2.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="15.0" right="20.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox prefHeight="80.0" prefWidth="70.0">
+                                 <children>
+                                    <Button id="cameraButton" fx:id="cameraButton" mnemonicParsing="false" onAction="#selectedCameraButton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-color: #3ca447; -fx-background-radius: 10;" text=" ">
+                                       <effect>
+                                          <DropShadow blurType="GAUSSIAN" />
+                                       </effect>
+                                       <graphic>
+                                          <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Image/Photography.png" />
+                                             </image>
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="hobbi">
+                                       <VBox.margin>
+                                          <Insets left="15.0" top="2.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets right="20.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox prefHeight="80.0" prefWidth="70.0">
+                                 <children>
+                                    <Button id="turtleButton" fx:id="turtleButton" mnemonicParsing="false" onAction="#selectedTurtleButton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-color: #3ca447; -fx-background-radius: 10;">
+                                       <effect>
+                                          <DropShadow blurType="GAUSSIAN" />
+                                       </effect>
+                                       <graphic>
+                                          <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Image/turtle.png" />
+                                             </image>
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="kiskedvenc">
+                                       <VBox.margin>
+                                          <Insets left="1.0" top="2.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets right="20.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox prefHeight="80.0" prefWidth="70.0">
+                                 <children>
+                                    <Button id="cocktailButton" fx:id="cocktailButton" mnemonicParsing="false" onAction="#selectedCocktailButton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-color: #3ca447; -fx-background-radius: 10;">
+                                       <effect>
+                                          <DropShadow blurType="GAUSSIAN" />
+                                       </effect>
+                                       <graphic>
+                                          <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Image/cocktail.png" />
+                                             </image>
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="szórakozás">
+                                       <VBox.margin>
+                                          <Insets left="1.0" top="2.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets right="20.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox onDragDetected="#selectedBookButton" prefHeight="80.0" prefWidth="70.0">
+                                 <children>
+                                    <Button id="bookButton" fx:id="bookButton" mnemonicParsing="false" onAction="#selectedBookButton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-color: #3ca447; -fx-background-radius: 10;">
+                                       <effect>
+                                          <DropShadow blurType="GAUSSIAN" />
+                                       </effect>
+                                       <graphic>
+                                          <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Image/other.png" />
+                                             </image>
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="egyéb">
+                                       <VBox.margin>
+                                          <Insets left="15.0" top="2.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <Button id="addSpendingButton" fx:id="addSpendingButton" layoutX="172.0" layoutY="410.0" mnemonicParsing="false" onAction="#addNewSpending" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: yellow; -fx-background-radius: 15;" text="Hozzáad">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </Button>
+                        <Label id="warningLabel1" fx:id="warningLabel1" layoutX="15.0" layoutY="100.0" text="A beírt összeg nem megfelelő!" textFill="RED" visible="false">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label id="warningLabel2" fx:id="warningLabel2" layoutX="139.0" layoutY="370.0" text="Nem választott kategoriát!" textFill="RED" visible="false">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children></Pane>
+                  <Pane id="statisticsPane" fx:id="statisticsPane" prefHeight="484.0" prefWidth="417.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <VBox layoutY="38.0" prefHeight="447.0" prefWidth="447.0" style="-fx-border-color: #3ca447; -fx-border-radius: 10;">
+                           <children>
+                              <HBox prefHeight="32.0" prefWidth="200.0" style="-fx-background-color: #3ca447; -fx-background-radius: 10;">
+                                 <children>
+                                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/house.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets left="40.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="lakás">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="30.0" top="8.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                    <Label id="spendingOfHome2" fx:id="spendingOfHome2" alignment="CENTER" minWidth="188.0" text="N/A">
+                                       <font>
+                                          <Font name="System Bold Italic" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="2.0" top="8.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label id="spendingOfHome" fx:id="spendingOfHome" text="N/A">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets top="7.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="32.0" prefWidth="200.0" style="-fx-background-color: #3ca447; -fx-background-radius: 10;">
+                                 <children>
+                                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/car.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets left="40.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="autó">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="30.0" top="8.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                    <Label id="spendingOfCar2" fx:id="spendingOfCar2" alignment="CENTER" minWidth="192.0" text="N/A">
+                                       <font>
+                                          <Font name="System Bold Italic" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="5.0" top="8.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label id="spendingOfCar" fx:id="spendingOfCar" text="N/A">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets top="7.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="32.0" prefWidth="200.0" style="-fx-background-color: #3ca447; -fx-background-radius: 10;">
+                                 <children>
+                                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/shoppingCart.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets left="40.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="élelmiszer">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="30.0" top="8.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                    <Label id="spendingOfFood2" fx:id="spendingOfFood2" alignment="CENTER" minWidth="156.0" text="N/A">
+                                       <font>
+                                          <Font name="System Bold Italic" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="-2.0" right="25.0" top="8.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label id="spendingOfFood" fx:id="spendingOfFood" text="N/A">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets top="7.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="32.0" prefWidth="200.0" style="-fx-background-color: #3ca447; -fx-background-radius: 10;">
+                                 <children>
+                                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/shoppingBag.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets left="40.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="vásárlás">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="30.0" top="8.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                    <Label id="spendingOfShopping2" fx:id="spendingOfShopping2" alignment="CENTER" minWidth="170.0" text="N/A">
+                                       <font>
+                                          <Font name="System Bold Italic" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets right="15.0" top="8.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label id="spendingOfShopping" fx:id="spendingOfShopping" text="N/A">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets top="7.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="32.0" prefWidth="200.0" style="-fx-background-color: #3ca447; -fx-background-radius: 10;">
+                                 <children>
+                                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/invoices.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets left="40.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="számlák">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="30.0" top="8.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                    <Label id="spendingOfInvoices2" fx:id="spendingOfInvoices2" alignment="CENTER" minWidth="170.0" text="N/A">
+                                       <font>
+                                          <Font name="System Bold Italic" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets right="15.0" top="8.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label id="spendingOfInvoices" fx:id="spendingOfInvoices" text="N/A">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets top="7.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="32.0" prefWidth="200.0" style="-fx-background-color: #3ca447; -fx-background-radius: 10;">
+                                 <children>
+                                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/student.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets left="40.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="oktatás">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="30.0" top="8.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                    <Label id="spendingOfStudy2" fx:id="spendingOfStudy2" alignment="CENTER" minWidth="175.0" text="N/A">
+                                       <font>
+                                          <Font name="System Bold Italic" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets right="15.0" top="8.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label id="spendingOfStudy" fx:id="spendingOfStudy" text="N/A">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets top="7.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="32.0" prefWidth="200.0" style="-fx-background-color: #3ca447; -fx-background-radius: 10;">
+                                 <children>
+                                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/Photography.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets left="40.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="hobbi">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="30.0" top="8.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                    <Label id="spendingOfHobby2" fx:id="spendingOfHobby2" alignment="CENTER" minWidth="185.0" text="N/A">
+                                       <font>
+                                          <Font name="System Bold Italic" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets right="5.0" top="8.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label id="spendingOfHobby" fx:id="spendingOfHobby" style="-fx-background-radius: 5;" text="N/A">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets top="7.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="32.0" prefWidth="200.0" style="-fx-background-color: #3ca447; -fx-background-radius: 10;">
+                                 <children>
+                                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/turtle.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets left="40.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="kiskedvenc">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="30.0" top="8.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                    <Label id="spendingOfPet2" fx:id="spendingOfPet2" alignment="CENTER" minWidth="150.0" text="N/A">
+                                       <font>
+                                          <Font name="System Bold Italic" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets right="35.0" top="8.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label id="spendingOfPet" fx:id="spendingOfPet" style="-fx-background-radius: 5;" text="N/A">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets top="7.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="32.0" prefWidth="200.0" style="-fx-background-color: #3ca447; -fx-background-radius: 10;">
+                                 <children>
+                                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/cocktail.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets left="40.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="szórakozás">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="30.0" top="8.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                    <Label id="spendingOfEntertainment2" fx:id="spendingOfEntertainment2" alignment="CENTER" minWidth="150.0" text="N/A">
+                                       <font>
+                                          <Font name="System Bold Italic" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets right="35.0" top="8.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label id="spendingOfEntertainment" fx:id="spendingOfEntertainment" text="N/A">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets top="7.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="32.0" prefWidth="200.0" style="-fx-background-color: #3ca447; -fx-background-radius: 10;">
+                                 <children>
+                                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/other.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets left="40.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="egyéb">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="30.0" top="8.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                    <Label id="otherSpending2" fx:id="otherSpending2" alignment="CENTER" minWidth="182.0" text="N/A">
+                                       <font>
+                                          <Font name="System Bold Italic" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="2.0" right="8.0" top="8.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label id="otherSpending" fx:id="otherSpending" text="N/A">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets top="7.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="32.0" prefWidth="200.0" style="-fx-background-color: #3ca447; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;">
+                                 <children>
+                                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/Calculator.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets left="40.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="összkiadás">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="30.0" right="70.0" top="8.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                    <Label id="totalSpending" fx:id="totalSpending" text="N/A">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets left="80.0" top="7.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="25.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <Button id="monthlySpending" fx:id="monthlySpending" layoutX="1.0" mnemonicParsing="false" onAction="#monthlyStatistic" prefHeight="20.0" prefWidth="117.0" style="-fx-background-color: #52ff64; -fx-border-color: black; -fx-border-width: 0 0 2 0;" text="Hónap">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                        <Button id="annualSpending" fx:id="annualSpending" layoutX="119.0" mnemonicParsing="false" onAction="#annualStatistic" prefHeight="20.0" prefWidth="117.0" style="-fx-background-color: #52ff64;" text="Év">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </Pane>
+                  <Pane id="tablePane" fx:id="tablePane" prefHeight="484.0" prefWidth="447.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TableView id="spendingTable" fx:id="spendingTable" editable="true" prefHeight="484.0" prefWidth="440.0">
+                          <columns>
+                          </columns>
+                          <placeholder>
+                              <Label text="Nincs adat" />
+                          </placeholder>
+                        </TableView>
+                     </children>
+                  </Pane>
+                  <Pane id="diagramPane" fx:id="diagramPane" prefHeight="484.0" prefWidth="447.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  </Pane>
+                  <Pane id="incomePane" fx:id="incomePane" layoutX="10.0" layoutY="10.0" prefHeight="484.0" prefWidth="447.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox layoutY="60.0" prefHeight="40.0" prefWidth="447.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Összeg:">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="15.0" top="10.0" />
+                                 </HBox.margin>
+                              </Text>
+                              <TextField id="incomeTF" fx:id="incomeTF" alignment="BOTTOM_RIGHT" prefWidth="110.0" style="-fx-background-color: #52ff64; -fx-border-color: black; -fx-border-width: 0 0 1 0;">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-1.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets left="15.0" right="5.0" top="10.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ft">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="50.0" top="10.0" />
+                                 </HBox.margin>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Dátum:">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="15.0" top="10.0" />
+                                 </HBox.margin>
+                              </Text>
+                              <DatePicker id="incomeDP" fx:id="incomeDP" blendMode="GREEN" prefHeight="25.0" prefWidth="101.0" style="-fx-background-color: green;">
+                                 <HBox.margin>
+                                    <Insets top="6.0" />
+                                 </HBox.margin>
+                              </DatePicker>
+                           </children>
+                        </HBox>
+                        <Text layoutX="15.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zsebek">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <HBox layoutY="220.0" prefHeight="70.0" prefWidth="447.0">
+                           <children>
+                              <VBox prefHeight="80.0" prefWidth="70.0">
+                                 <children>
+                                    <Button id="walletButton" fx:id="walletButton" mnemonicParsing="false" onAction="#selectedWalletButton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-color: #3ca447; -fx-background-radius: 10;">
+                                       <effect>
+                                          <DropShadow blurType="GAUSSIAN" />
+                                       </effect>
+                                       <graphic>
+                                          <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                             <image>
+                                                <Image url="@../Image/wallet.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="fő">
+                                       <VBox.margin>
+                                          <Insets left="25.0" top="2.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="15.0" right="20.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox prefHeight="80.0" prefWidth="70.0">
+                                 <children>
+                                    <Button id="newHomeButton" fx:id="newHomeButton" mnemonicParsing="false" onAction="#selectedNewHomeButton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-color: #3ca447; -fx-background-radius: 10;">
+                                       <effect>
+                                          <DropShadow blurType="GAUSSIAN" />
+                                       </effect>
+                                       <graphic>
+                                          <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                             <image>
+                                                <Image url="@../Image/newHome.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="új otthon">
+                                       <VBox.margin>
+                                          <Insets left="8.0" top="2.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets right="20.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox prefHeight="80.0" prefWidth="70.0">
+                                 <children>
+                                    <Button id="newCarButton" fx:id="newCarButton" mnemonicParsing="false" onAction="#selectedNewCarButton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-color: #3ca447; -fx-background-radius: 10;">
+                                       <effect>
+                                          <DropShadow blurType="GAUSSIAN" />
+                                       </effect>
+                                       <graphic>
+                                          <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                             <image>
+                                                <Image url="@../Image/newCar.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="új autó">
+                                       <VBox.margin>
+                                          <Insets left="13.0" top="2.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets right="20.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox prefHeight="80.0" prefWidth="70.0">
+                                 <children>
+                                    <Button id="palmButton" fx:id="palmButton" mnemonicParsing="false" onAction="#selectedPalmButton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-color: #3ca447; -fx-background-radius: 10;">
+                                       <effect>
+                                          <DropShadow blurType="GAUSSIAN" />
+                                       </effect>
+                                       <graphic>
+                                          <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                             <image>
+                                                <Image url="@../Image/palm.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="utazás">
+                                       <VBox.margin>
+                                          <Insets left="14.0" top="2.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets right="20.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox prefHeight="80.0" prefWidth="70.0">
+                                 <children>
+                                    <Button id="savingsButton" fx:id="savingsButton" mnemonicParsing="false" onAction="#selectedSavingsButton" prefHeight="50.0" prefWidth="60.0" style="-fx-background-color: #3ca447; -fx-background-radius: 10;">
+                                       <effect>
+                                          <DropShadow blurType="GAUSSIAN" />
+                                       </effect>
+                                       <graphic>
+                                          <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                             <image>
+                                                <Image url="@../Image/savings.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="egyéb">
+                                       <VBox.margin>
+                                          <Insets left="16.0" top="2.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <Button id="addIncomeButton" fx:id="addIncomeButton" layoutX="172.0" layoutY="380.0" mnemonicParsing="false" onAction="#addNewIncome" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: yellow; -fx-background-radius: 15;" text="Hozzáad">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Label id="warningLabel3" fx:id="warningLabel3" layoutX="15.0" layoutY="100.0" text="A beírt összeg nem megfelelő!" textFill="RED" visible="false">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label id="warningLabel4" fx:id="warningLabel4" layoutX="120.0" layoutY="315.0" text="Nem választott a zsebbek közül!" textFill="RED" visible="false">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane id="tablePane2" fx:id="tablePane2" prefHeight="484.0" prefWidth="447.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TableView id="incomeTable" fx:id="incomeTable" prefHeight="484.0" prefWidth="440.0">
+                         <columns>
+                          </columns>
+                          <placeholder>
+                              <Label text="Nincs adat" />
+                          </placeholder>
+                        </TableView>
+                     </children>
+                  </Pane>
+                  <Pane id="balancePane" fx:id="balancePane" prefHeight="484.0" prefWidth="447.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <VBox prefHeight="484.0" prefWidth="447.0" style="-fx-border-color: #3ca447; -fx-border-radius: 10;">
+                           <children>
+                              <HBox prefHeight="32.0" prefWidth="200.0" style="-fx-background-color: #3ca447; -fx-background-radius: 10;">
+                                 <children>
+                                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/wallet.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets left="40.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="fő">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="30.0" top="8.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                    <Label id="mainBalance" fx:id="mainBalance" alignment="CENTER" maxWidth="120.0" minWidth="120.0" text="0">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets top="8.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets left="120.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label id="spendingOfStudy" fx:id="spendingOfStudy1" text="ft">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets top="7.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="32.0" prefWidth="200.0" style="-fx-background-color: #3ca447; -fx-background-radius: 10;">
+                                 <children>
+                                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/newHome.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets left="40.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="új otthon">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="30.0" top="8.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                    <Label id="newHomeBalance" fx:id="newHomeBalance" alignment="CENTER" maxWidth="120.0" minWidth="120.0" text="0">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets top="8.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets left="72.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label id="spendingOfHobby" fx:id="spendingOfHobby1" style="-fx-background-radius: 5;" text="ft">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets top="7.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="32.0" prefWidth="200.0" style="-fx-background-color: #3ca447; -fx-background-radius: 10;">
+                                 <children>
+                                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/newCar.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets left="40.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="új autó">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="30.0" top="8.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                    <Label id="newCarBalance" fx:id="newCarBalance" alignment="CENTER" maxWidth="120.0" minWidth="120.0" text="0">
+                                       <font>
+                                          <Font name="System Bold Italic" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets top="8.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets left="87.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label id="spendingOfPet" fx:id="spendingOfPet1" style="-fx-background-radius: 5;" text="ft">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets top="7.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="32.0" prefWidth="200.0" style="-fx-background-color: #3ca447; -fx-background-radius: 10;">
+                                 <children>
+                                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/palm.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets left="40.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="utazás">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="30.0" top="8.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                    <Label id="travelBalance" fx:id="travelBalance" alignment="CENTER" maxWidth="120.0" minWidth="120.0" text="0">
+                                       <font>
+                                          <Font name="System Bold Italic" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets top="8.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets left="92.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label id="spendingOfEntertainment" fx:id="spendingOfEntertainment1" text="ft">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets top="7.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox prefHeight="32.0" prefWidth="200.0" style="-fx-background-color: #3ca447; -fx-background-radius: 10;">
+                                 <children>
+                                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../Image/savings.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets left="40.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="egyéb">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="30.0" top="8.0" />
+                                       </HBox.margin>
+                                    </Text>
+                                    <Label id="otherBalance" fx:id="otherBalance" alignment="CENTER" maxWidth="120.0" minWidth="120.0" text="0">
+                                       <font>
+                                          <Font name="System Bold Italic" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets left="2.0" top="8.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets left="92.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Label id="otherSpending" fx:id="otherSpending1" text="ft">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets top="7.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <VBox prefHeight="183.0" prefWidth="444.0" style="-fx-background-color: #3ca447; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;">
+                                 <VBox.margin>
+                                    <Insets top="60.0" />
+                                 </VBox.margin>
+                                 <children>
+                                    <Label text="Zsebek közötti utalás">
+                                       <VBox.margin>
+                                          <Insets left="20.0" top="5.0" />
+                                       </VBox.margin>
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox prefHeight="34.0" prefWidth="443.0">
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin>
+                                       <children>
+                                          <TextField id="transferTF" fx:id="transferTF" alignment="CENTER" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #52ff64; -fx-border-color: black; -fx-border-width: 0  0 1 0;">
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="3.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </TextField>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ft">
+                                             <HBox.margin>
+                                                <Insets left="2.0" top="5.0" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Text>
+                                          <ComboBox id="transferCombo" fx:id="transferCombo" maxWidth="120.0" prefWidth="100.0" promptText="honnan?" style="-fx-background-color: #52ff64; -fx-background-radius: 5; -fx-border-color: black; -fx-border-radius: 5;">
+                                             <HBox.margin>
+                                                <Insets left="30.0" top="3.0" />
+                                             </HBox.margin>
+                                          </ComboBox>
+                                          <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../Image/arrow.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <ComboBox id="transferCombo2" fx:id="transferCombo2" maxWidth="120.0" prefWidth="100.0" promptText="hová?" style="-fx-background-color: #52ff64; -fx-background-radius: 5; -fx-border-color: black; -fx-border-radius: 5;">
+                                             <HBox.margin>
+                                                <Insets left="10.0" top="3.0" />
+                                             </HBox.margin>
+                                          </ComboBox>
+                                       </children>
+                                    </HBox>
+                                    <Label id="warningLabel5" fx:id="warningLabel5" text="A beírt összeg nem megfelelő!" textFill="RED" visible="false">
+                                       <font>
+                                          <Font name="System Bold" size="14.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="130.0" top="10.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Button id="transferButton" fx:id="transferButton" mnemonicParsing="false" onAction="#transfer" prefHeight="25.0" prefWidth="110.0" style="-fx-background-color: yellow; -fx-background-radius: 15;" text="Utalás">
+                                       <effect>
+                                          <DropShadow />
+                                       </effect>
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="170.0" top="15.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
